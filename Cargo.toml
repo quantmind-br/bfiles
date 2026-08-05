@@ -1,0 +1,14 @@
+[package]
+name = "bfiles"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rayon = "1"
+rustix = { version = "1", features = ["fs"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
